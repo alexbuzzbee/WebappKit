@@ -9,7 +9,7 @@ function UIInit(callback, appName) {
 function appendElementWithID(element, id, contents, nest) {
   return appendElementWithProperties(element, 'id="' + id + '"', contents, nest);
 }
-  
+
 function appendElementWithClass(element, cls, contents, nest) {
   return appendElementWithProperties(element, 'class="' + cls + '"', contents, nest);
 }
@@ -25,8 +25,7 @@ function appendElementWithProperties(element, props, contents, nest) {
 
 function removeElement(selector) {
   var element = $(selector);
-  element.fadeOut();
-  element.remove();
+  element.fadeOut(null, null, element.remove);
 }
 
 function UIReady() {

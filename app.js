@@ -3,11 +3,14 @@ function entryPoint() {
   appendElementWithID("h1", "header", "Hello, world!");
   appendElementWithID("div", "container", "")
   appendElementWithID("p", "line1", "I'm a UIKit application!", "#container");
-  appendElementWithID("p", "line2", "And I'm really glad to meet you!", "#container")
-  removeElement("#line2");
+  appendElementWithProperties("a", 'href="#" id="clickable"', "Click me", "#container");
   UIReady();
 }
 
 $(document).ready(function() {
   UIInit(entryPoint, "Test application");
+  $("#clickable").on("click", function(event) {
+    event.preventDefault();
+    removeElement("#clickable");
+  });
 });

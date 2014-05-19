@@ -1,8 +1,7 @@
-var UIRoot, app;
+var app;
 
 function UIInit(callback, appName) {
-  UIRoot = $("#contentRectangle");
-  app = new Application(callback, appName);
+  app = new Application(callback, appName, $("#contentRectangle"));
   app.start();
 }
 
@@ -16,7 +15,7 @@ function appendElementWithClass(element, cls, contents, nest) {
 
 function appendElementWithProperties(element, props, contents, nest) {
   if (!nest) {
-    nest = UIRoot;
+    nest = app.UIRoot;
   } else {
     nest = $(nest);
   }
@@ -29,7 +28,7 @@ function removeElement(selector) {
 }
 
 function UIReady() {
-  UIRoot.fadeIn();
+  app.UIRoot.fadeIn();
 }
 
 function setTitle(newTitle) {

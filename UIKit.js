@@ -62,7 +62,7 @@ function removeElement(selector) {
   var element = $(selector);
   element.fadeOut();
   try {
-    sleep(0.4);
+    sleep(0.41);
   } finally {
     element.remove();
   }

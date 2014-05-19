@@ -6,11 +6,26 @@ function UIInit(callback, appName) {
 }
 
 function fork(callback, appName, selector) {
-  return new Application(callback appName, $(selector))
+  return new Application(callback, appName, $(selector));
 }
 
-function appendElementWithPropertiesAndHandler(element, props, contents, callback, nest) {
-  appendElementWithProperties(element, props, contents, nest).on("click", callback);
+function lineBreak(nest) {
+  if (!nest) {
+    nest = app.UIRoot;
+  } else {
+    nest = $(nest);
+  }
+  return nest.append("<br />");
+}
+
+function appendElementWithIDAndHandler(element, id, contents, callback, nest) {
+  var jqObject = appendElementWithID(element, id, contents, nest).find("#" + id);
+  return jqObject.on("click", callback);
+}
+
+function appendElementWithClassAndHandler(element, cls, contents, callback, nest) {
+  var jqObject = appendElementWithID(element, cls, contents, nest).find("." + id);
+  return jqObject.on("click", callback);
 }
 
 function appendElementWithID(element, id, contents, nest) {
@@ -28,6 +43,19 @@ function appendElementWithProperties(element, props, contents, nest) {
     nest = $(nest);
   }
   return nest.append("<" + element + " " + props + ">" + contents + "</" + element + ">");
+}
+
+function appendSelfClosingElementWithProperties(element, props, nest) {
+  return appendSelfClosingElement(element + " " + props, nest);
+}
+
+function appendSelfClosingElement(element, nest) {
+  if (!nest) {
+    nest = app.UIRoot;
+  } else {
+    nest = $(nest);
+  }
+  nest.append("<" + element + " />")
 }
 
 function removeElement(selector) {

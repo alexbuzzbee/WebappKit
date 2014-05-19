@@ -3,12 +3,20 @@ function killClickable(event) {
   removeElement("#clickable");
 }
 
+function buttonClicked(event) {
+  event.preventDefault();
+  event.stopPropagation()
+  alert("Hello, world! ...Again...");
+}
+
 function entryPoint() {
   setTitle("Test application");
   appendElementWithID("h1", "header", "Hello, world!");
   appendElementWithID("div", "container", "")
   appendElementWithID("p", "line1", "I'm a UIKit application!", "#container");
-  appendElementWithPropertiesAndHandler("a", 'href="#" id="clickable"', "Click me", killClickable, "#container");
+  appendElementWithIDAndHandler("a", "clickable", "Click me", killClickable, "#container");
+  lineBreak("#container");
+  appendElementWithIDAndHandler("button", "helloButton", "Click me too!", buttonClicked, "#container");
   UIReady();
 }
 

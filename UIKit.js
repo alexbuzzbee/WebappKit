@@ -55,17 +55,13 @@ function appendSelfClosingElement(element, nest) {
   } else {
     nest = $(nest);
   }
-  nest.append("<" + element + " />")
+  nest.append("<" + element + " />");
 }
 
 function removeElement(selector) {
   var element = $(selector);
   element.fadeOut();
-  try {
-    sleep(0.41);
-  } finally {
-    element.remove();
-  }
+  setTimeout(function() {element.remove();}, 500);
 }
 
 function UIReady() {

@@ -1,8 +1,8 @@
 var UIRoot, app;
 
-function UIInit(callback) {
+function UIInit(callback, appName) {
   UIRoot = $("#contentRectangle");
-  app = new Application(callback);
+  app = new Application(callback, appName);
   app.start();
 }
 

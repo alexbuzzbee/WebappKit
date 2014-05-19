@@ -8,5 +8,5 @@ function entryPoint() {
 }
 
 $(document).ready(function() {
-  UIInit(entryPoint);
+  UIInit(entryPoint, "Test application");
 });

@@ -5,6 +5,10 @@ function UIInit(callback, appName) {
   app.start();
 }
 
+function fork(callback, appName, selector) {
+  return new Application(callback appName, $(selector))
+}
+
 function appendElementWithPropertiesAndHandler(element, props, contents, callback, nest) {
   appendElementWithProperties(element, props, contents, nest).on("click", callback);
 }

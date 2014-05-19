@@ -23,6 +23,12 @@ function appendElementWithProperties(element, props, contents, nest) {
   return nest.append("<" + element + " " + props + ">" + contents + "</" + element + ">");
 }
 
+function removeElement(selector) {
+  var element = $(selector);
+  element.fadeOut();
+  element.remove();
+}
+
 function UIReady() {
   UIRoot.fadeIn();
 }

@@ -15,7 +15,7 @@ function entryPoint() {
   appendElementWithID("div", "container", "")
   appendElementWithID("p", "line1", "I'm a UIKit application!", "#container");
   appendElementWithIDAndHandler("a", "clickable", "Click me", killClickable, "#container");
-  lineBreak("#container");
+  appendSelfClosingElement("br", "#container");
   appendElementWithIDAndHandler("button", "helloButton", "Click me too!", buttonClicked, "#container");
   UIReady();
 }

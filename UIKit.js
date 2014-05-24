@@ -5,7 +5,7 @@ function UIInit(callback, appName) {
   app.start();
 }
 
-function fork(callback, appName, selector) {
+function spawn(callback, appName, selector) {
   return new Application(callback, appName, $(selector));
 }
 

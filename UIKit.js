@@ -10,13 +10,11 @@ function spawn(callback, appName, selector) {
 }
 
 function appendElementWithIDAndHandler(element, id, contents, callback, nest) {
-  var jqObject = appendElementWithID(element, id, contents, nest);
-  return jqObject.on("click", callback);
+  return appendElementWithID(element, id, contents, nest).on("click", callback);
 }
 
 function appendElementWithClassAndHandler(element, cls, contents, callback, nest) {
-  var jqObject = appendElementWithID(element, cls, contents, nest);
-  return jqObject.on("click", callback);
+  return appendElementWithID(element, cls, contents, nest).on("click", callback);
 }
 
 function appendElementWithID(element, id, contents, nest) {

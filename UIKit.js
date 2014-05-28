@@ -14,7 +14,7 @@ function appendElementWithIDAndHandler(element, id, contents, callback, nest) {
 }
 
 function appendElementWithClassAndHandler(element, cls, contents, callback, nest) {
-  return appendElementWithID(element, cls, contents, nest).on("click", callback);
+  return appendElementWithClass(element, cls, contents, nest).on("click", callback);
 }
 
 function appendElementWithID(element, id, contents, nest) {

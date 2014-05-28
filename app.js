@@ -5,7 +5,7 @@ function killClickable(event) {
 
 function buttonClicked(event) {
   event.preventDefault();
-  event.stopPropagation()
+  event.stopPropagation();
   alert("Hello, world! ...Again...");
 }
 

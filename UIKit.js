@@ -2,6 +2,7 @@ var app;
 
 function UIInit(callback, appName) {
   app = new Application(callback, appName, $("#contentRectangle"));
+  $("#loading").find("h1").text(app.name + " is loading.");
   app.start();
 }
 
@@ -60,6 +61,7 @@ function removeElement(selector) {
 }
 
 function UIReady() {
+  $("#loading").remove();
   app.UIRoot.fadeIn();
 }
 

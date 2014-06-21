@@ -1,6 +1,7 @@
 function killClickable(event) {
   event.preventDefault();
   removeElement("#clickable");
+  removeElement("#container br")
 }
 
 function buttonClicked(event) {

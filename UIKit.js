@@ -1,4 +1,5 @@
-var app;
+var app, UIK_VERSION;
+UIK_VERSION = 1.0;
 
 function UIInit(callback, appName) {
   app = new Application(callback, appName, $("#contentRectangle"));

@@ -10,6 +10,14 @@ function spawn(callback, appName, selector) {
   return new Application(callback, appName, $(selector));
 }
 
+function install(filename, callback, failureCallback) {
+  if (failureCallback) {
+    return $.getScript(filename).done(callback).fail(failureCallback);
+  } else {
+    return $.getScript(filename).done(callback);
+  }
+}
+
 function appendElementWithIDAndHandler(element, id, contents, callback, nest) {
   return appendElementWithID(element, id, contents, nest).on("click", callback);
 }

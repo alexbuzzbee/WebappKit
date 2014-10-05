@@ -11,7 +11,7 @@ function spawn(callback, appName, selector) {
   return new Application(callback, appName, $(selector));
 }
 
-function install(filename, callback, failureCallback) {
+function loadModule(filename, callback, failureCallback) {
   if (failureCallback) {
     return $.getScript(filename).done(callback).fail(failureCallback);
   } else {

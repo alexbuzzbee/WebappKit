@@ -1,7 +1,9 @@
+var self;
+
 function killClickable(event) {
   event.preventDefault();
-  removeElement("#clickable");
-  removeElement("#container br")
+  self.removeElement("#clickable");
+  self.removeElement("#container br")
 }
 
 function buttonClicked(event) {
@@ -11,16 +13,17 @@ function buttonClicked(event) {
 }
 
 function entryPoint() {
-  setTitle("Test application");
-  appendElementWithID("h1", "header", "Hello, world!");
-  appendElementWithID("div", "container", "")
-  appendElementWithID("p", "line1", "I'm a UIKit application!", "#container");
-  appendElementWithIDAndHandler("a", "clickable", "Click me", killClickable, "#container");
-  appendSelfClosingElement("br", "#container");
-  appendElementWithIDAndHandler("button", "helloButton", "Click me too!", buttonClicked, "#container");
-  UIReady();
+  self = this;
+  webappkit.setTitle("Test application");
+  self.appendElementWithID("h1", "header", "Hello, world!");
+  self.appendElementWithID("div", "container", "")
+  self.appendElementWithID("p", "line1", "I'm a WebappKit application!", "#container");
+  self.appendElementWithIDAndHandler("a", "clickable", "Click me", killClickable, "#container");
+  self.appendSelfClosingElement("br", "#container");
+  self.appendElementWithIDAndHandler("button", "helloButton", "Click me too!", buttonClicked, "#container");
+  self.UIReady();
 }
 
 $(document).ready(function() {
-  UIInit(entryPoint, "Test application");
+  webappkit.init(entryPoint, "Test application");
 });

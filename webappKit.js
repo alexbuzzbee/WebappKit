@@ -10,6 +10,10 @@ webappkit.init = function(callback, appName) {
 };
 
 webappkit.loadModule = function(filename, callback, failureCallback) {
+  res = filename.match("wak.(.*)");
+  if (res !== null) {
+    filename = "webappKitModules/" + res[1] + ".js";
+  }
   if (failureCallback) {
     return $.getScript(filename).done(callback).fail(failureCallback);
   } else {

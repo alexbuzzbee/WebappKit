@@ -3,14 +3,14 @@ window.webappkit = {
   version: 2.0
 };
 
-webappkit.init = function(callback, appName) {
+window.webappkit.init = function(callback, appName) {
   this.app = new this.Application(callback, appName, $("#contentRectangle"));
   $("#loading").find("h1").text(this.app.name + " is loading.");
   this.app.start();
 };
 
-webappkit.loadModule = function(filename, callback, failureCallback) {
-  res = filename.match("wak.(.*)");
+window.webappkit.loadModule = function(filename, callback, failureCallback) {
+  var res = filename.match("wak.(.*)");
   if (res !== null) {
     filename = "webappKitModules/" + res[1] + ".js";
   }
@@ -21,6 +21,6 @@ webappkit.loadModule = function(filename, callback, failureCallback) {
   }
 };
 
-webappkit.setTitle = function(newTitle) {
+window.webappkit.setTitle = function(newTitle) {
   $("title").text(newTitle);
 };

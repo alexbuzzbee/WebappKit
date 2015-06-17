@@ -4,7 +4,7 @@ webappkit.Application = function(startFunc, name, root) {
   this.UIRoot = root;
 
   this.start = startFunc;
-}
+};
 webappkit.Application.prototype = {
 
 appendElementWithIDAndHandler: function(element, id, contents, callback, nest) {

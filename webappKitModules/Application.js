@@ -1,3 +1,5 @@
+/*global:webappKit*/ // Stop complaining about my global variable!
+
 webappkit.Application = function(startFunc, name, root) {
   this.name = name;
   this.webappKitVersion = webappkit.version;

@@ -1,3 +1,5 @@
+/*global:webappKit*/ // Stop complaining about my global variable!
+
 var self;
 
 function killClickable(event) {

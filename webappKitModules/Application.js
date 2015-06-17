@@ -1,4 +1,4 @@
-/* global:webappkit */ // Stop complaining about my global variable!
+/* global webappkit */ // Stop complaining about my global variable!
 
 webappkit.Application = function(startFunc, name, root) {
   this.name = name;

@@ -1,6 +1,6 @@
 window.webappkit = {
   app: null,
-  version: 2.02
+  version: 2.03
 };
 
 window.webappkit.init = function(callback, appName) {

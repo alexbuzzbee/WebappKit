@@ -1,4 +1,4 @@
-/* global:webappkit */ // Stop complaining about my global variable!
+/* global webappkit */ // Stop complaining about my global variable!
 
 var self;
 
